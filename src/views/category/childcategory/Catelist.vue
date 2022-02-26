@@ -33,6 +33,7 @@
 		methods:{
 			isclick(index){						//监听点击了谁
 				this.iscolor=index
+				this.$emit('isclick',index)
 			}
 		},
 		updated() {										//页面更新数据以后重新计算上滑大小
@@ -44,7 +45,7 @@
 <style scoped>
 	.Catelist{
 		height: calc(100% - 51px);
-		width: 45vh;
+		width: 50vh;
 		/* border: solid 2px #FF0000; */
 		list-style: none;
 		text-align: center;

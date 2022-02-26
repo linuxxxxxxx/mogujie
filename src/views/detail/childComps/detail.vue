@@ -63,7 +63,7 @@
 			//1.根据iid请求详情数据
 			getDetail(this.iid).then(res => {
 				const data=res.result
-				console.log(data)
+				// console.log(data)
 				this.topimages=data.itemInfo.topImages
 				//2.获取商品信息
 				this.goods=new Goods(data.itemInfo,data.columns,data.shopInfo.services)
@@ -85,7 +85,6 @@
 			})
 			//7.请求推荐数据
 			getrecommend().then( res=> {
-				console.log(res)
 				this.recommeds=res.data.list
 			})
 
@@ -99,9 +98,6 @@
 				this.themeTopYs.push(Number.MAX_VALUE)
 				// console.log(this.themeTopYs)
 			},200)
-		},
-		mounted() {
-			//console.log(mounted)
 		},
 		methods:{
 			...mapActions(['addCart']),
